@@ -20,7 +20,8 @@ public class test20201222 {
         int amount = 0;
         int money = 1;
         for (int day = 1;day <= 10;day++) {
-            amount = amount + money;
+            //amount = amount + money;
+            amount+=money;
             money = money*2;
         }
         System.out.println(amount);
