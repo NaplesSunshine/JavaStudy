@@ -59,7 +59,7 @@ public class test20201223 {
             System.out.print(i[z]+" ");
         }*/
         //冒泡排序
-        for (int x = 0; x < i.length; x++) {
+        /*for (int x = 0; x < i.length; x++) {
             for (int y = 0; y < i.length-x-1; y++) {
                 if(i[y]>i[y+1]){
                     int temp = i[y];
@@ -70,8 +70,15 @@ public class test20201223 {
         }
 
         //把内容打印出来
-        for (int z = 0; z < i.length; z++) {
-            System.out.print(i[z] + " ");
+        for (int value : i) {
+            System.out.print(value + " ");
+        }*/
+        int max = -1;
+        for (int value : i) {
+            if (value > max) {
+                max = value;
+            }
         }
+        System.out.println("最大值是"+ max);
     }
 }
