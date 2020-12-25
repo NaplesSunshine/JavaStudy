@@ -46,5 +46,33 @@ public class test20201225 {
                 {4,5},
                 {6,7,8,9}
         };
+
+        //定义一个5X5的二维数组。 然后使用随机数填充该二维数组。找出这个二维数组里，最大的那个值，并打印出其二维坐标
+        int[][] args4 = new int[5][5];
+        for (int x = 0;x < args4.length;x++) {
+            for (int y = 0;y < args4[x].length;y++) {
+                args4[x][y] = (int)(Math.random()*100);
+            }
+        }
+        for (int[] row : args4) {
+           for (int value : row) {
+               System.out.print(value + "\t");
+           }
+           System.out.println();
+        }
+        int max = -1;
+        int max_x = 0,max_y = 0;
+        for (int x = 0;x < args4.length;x++) {
+            for (int y = 0;y < args4[x].length;y++) {
+                if (args4[x][y] > max) {
+                    max = args4[x][y];
+                    max_x = x;
+                    max_y = y;
+                }
+            }
+        }
+        System.out.println("该二维数组的最大值是：" + max +"，其二维坐标为：" + "(" + max_x + "," + max_y +")");
+
+
     }
 }
