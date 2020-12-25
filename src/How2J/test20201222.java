@@ -17,13 +17,22 @@ public class test20201222 {
         }while (x > 1);
         System.out.println(n);*/
         //for循环
-        int amount = 0;
+        /*int amount = 0;
         int money = 1;
         for (int day = 1;day <= 10;day++) {
             //amount = amount + money;
             amount+=money;
             money = money*2;
         }
-        System.out.println(amount);
+        System.out.println(amount);*/
+        //continue语句
+        /*for (int i = 1;i <= 100;i++){
+            if (0 == i%3 & 0 == i%5) {
+                continue;
+            }
+        System.out.println(i);
+        }*/
+        //break语句
+        
     }
 }
