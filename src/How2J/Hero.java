@@ -12,6 +12,14 @@ public class Hero {
     int attackSpeed;    //攻击速度
     String wordAfterKill;   //击杀后说的话
     String wordAfterKilled; //被击杀后说的话
+
+    //构造方法
+    public Hero(String heroName,float heroHp,float heroArmor,int heroMoveSpeed) {
+        name = heroName;
+        hp = heroHp;
+        armor = heroArmor;
+        moveSpeed = heroMoveSpeed;
+    }
     //超神
     public void legendary() {
         System.out.println(name+"超神了！");
