@@ -14,10 +14,19 @@ public class Hero {
     String wordAfterKilled; //被击杀后说的话
 
     //构造方法
-    public Hero(String heroName,float heroHp,float heroArmor,int heroMoveSpeed) {
+    public Hero(String heroName) {
         name = heroName;
-        hp = heroHp;
-        armor = heroArmor;
+    }
+    public Hero(String heroName,float heroHp) {
+        this(heroName);
+        this.hp = heroHp;
+    }
+    public Hero(String heroName,float heroHp,float heroArmor) {
+        this(heroName,heroHp);
+        this.armor = heroArmor;
+    }
+    public Hero(String heroName,float heroHp,float heroArmor,int heroMoveSpeed) {
+        this(heroName,heroHp,heroArmor);
         moveSpeed = heroMoveSpeed;
     }
     //超神
