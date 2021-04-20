@@ -1,4 +1,8 @@
 public class ADHero extends Hero{
+    public ADHero(String heroName) {
+        super(heroName);
+    }
+
     public void attack() {
         System.out.println(name + " 进行了一次攻击 ，但是不确定打中谁了");
     }

@@ -29,6 +29,11 @@ public class Hero {
         this(heroName,heroHp,heroArmor);
         moveSpeed = heroMoveSpeed;
     }
+
+    public Hero() {
+
+    }
+
     //超神
     public void legendary() {
         System.out.println(name+"超神了！");
