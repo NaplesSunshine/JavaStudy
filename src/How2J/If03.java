@@ -12,18 +12,33 @@ public class If03 {
     请从键盘输入保国的芝麻信用分， 并加以判断
     假定信用分数为 int
     */
-        int faultNum = 0;
+        int faultNum;
         Scanner myScanner = new Scanner(System.in);
-        System.out.println("请输入保国同志的芝麻信用分：");
-        //int xinYongFen = myScanner.nextInt();
-        for (int xinYongFen = myScanner.nextInt(); xinYongFen >= 100 || xinYongFen <= 1; faultNum++) {
-            System.out.println("信用分输入有误，请重新输入:");
-            int reXinYongFen = myScanner.nextInt();
-            xinYongFen = reXinYongFen;
-            if (faultNum >= 3) {
-                System.out.println("输入错误数据超过三次，退出程序。");
-                break;
+        System.out.println("请输入川建国同志的芝麻信用分：");
+        int xinYongFen = myScanner.nextInt();
+        if (xinYongFen > 100 || xinYongFen < 0) {
+            for (faultNum = 1; faultNum < 3; faultNum++) {
+                System.out.println("信用分(0-100)输入有误，请重新输入:");
+                int reXinYongFen = myScanner.nextInt();
+                xinYongFen = reXinYongFen;
+                if (xinYongFen >= 0 && xinYongFen <= 100) {
+                    faultNum = 3;
+                    if (xinYongFen == 100) {
+                        System.out.println("信用极好");
+                    } else if (xinYongFen > 80 && xinYongFen <= 99) {
+                        System.out.println("信用优秀");
+                    } else if (xinYongFen >= 60 && xinYongFen <= 80) {
+                        System.out.println("信用一般");
+                    } else {
+                        System.out.println("信用不及格");
+                    }
+
+                }
+                if (faultNum == 3) {
+                    System.out.println("输入错误超过3次，退出程序。");
+                }
             }
+        }else {
             if (xinYongFen == 100) {
                 System.out.println("信用极好");
             } else if (xinYongFen > 80 && xinYongFen <= 99) {
