@@ -1,4 +1,4 @@
-public class Stars1 {
+public class MulForExercise03 {
     public static void main(String[] args) {
         int iMax = 5;
         //单边金字塔
