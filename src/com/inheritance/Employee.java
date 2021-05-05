@@ -2,19 +2,15 @@ package com.inheritance;
 
 import java.time.*;
 
-public class Employee {
-    private String name;
+public class Employee extends Person {
+
     private double salary;
     private LocalDate hireDay;
 
     public Employee(String name, double salary, int year, int mouth, int day) {
-        this.name = name;
+        super(name);
         this.salary = salary;
         hireDay = LocalDate.of(year, mouth, day);
-    }
-
-    public String getName() {
-        return name;
     }
 
     public double getSalary() {
@@ -23,6 +19,10 @@ public class Employee {
 
     public LocalDate getHireDay() {
         return hireDay;
+    }
+
+    public String getDescription() {
+        return String.format("an employee with a salary of $%.2f", salary);
     }
 
     public void raiseSalary(double byPercent) {
