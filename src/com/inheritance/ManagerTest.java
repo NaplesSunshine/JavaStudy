@@ -18,6 +18,9 @@ public class ManagerTest {
         staff[0].sayName();
 
         System.out.println(staff[0].getName().equals("Mark"));
-        Object
+
+        System.out.println(staff[0].equals(staff[1]));
+
+        System.out.println(staff[0]);
     }
 }

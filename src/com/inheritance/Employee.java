@@ -1,6 +1,7 @@
 package com.inheritance;
 
 import java.time.*;
+import java.util.Objects;
 
 public class Employee extends Person {
 
@@ -30,6 +31,8 @@ public class Employee extends Person {
         salary += raise;
     }
 
+    //重写 Object 的 equals 方法
+    @Override
     public boolean equals(Object otherObject) {
         if(this == otherObject) {
             return true;
@@ -41,6 +44,26 @@ public class Employee extends Person {
             return false;
         }
         Employee other = (Employee)otherObject;
-        return this.name.equals(other.name) && salary = other.salary && hireDay.equals(other.hireDay);
+        return this.equals(other.getName()) && salary == other.salary && hireDay.equals(other.hireDay);
+    }
+
+    //当直接输出一个对象时， toString 方法会被默认的调用
+    /*
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "name=" + this.getName() +
+                ", salary=" + salary +
+                ", hireDay=" + hireDay +
+                '}';
+    }
+    */
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                "[salary=" + salary +
+                ", hireDay=" + hireDay +
+                "]";
     }
 }

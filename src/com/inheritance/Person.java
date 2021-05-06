@@ -16,4 +16,11 @@ public abstract class Person {
     public void sayName() {
         System.out.println("My name is " + this.name);
     }
+
+    @Override
+    public String toString() {
+        return getClass().getName() +
+                "[name=" + name +
+                "]";
+    }
 }
