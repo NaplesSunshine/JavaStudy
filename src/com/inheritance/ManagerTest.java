@@ -14,5 +14,10 @@ public class ManagerTest {
         for(Employee e : staff) {
             System.out.println("name= " + e.getName() + ",\t" + "salary= " + e.getSalary());
         }
+
+        staff[0].sayName();
+
+        System.out.println(staff[0].getName().equals("Mark"));
+        Object
     }
 }

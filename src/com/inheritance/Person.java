@@ -12,4 +12,8 @@ public abstract class Person {
     public String getName() {
         return name;
     }
+
+    public void sayName() {
+        System.out.println("My name is " + this.name);
+    }
 }
