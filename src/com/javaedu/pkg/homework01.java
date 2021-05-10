@@ -7,8 +7,11 @@ public class homework01 {
         person1s[1] = new Person1("Mark", 17, "Li");
         person1s[2] = new Person1("Dk", 32, "Teacher");
 
+        person1s[1].BubbleSort(person1s);
+        person1s[1].printArr(person1s);
     }
 }
+
 class Person1 {
     public String name;
     public int age;
@@ -19,4 +22,35 @@ class Person1 {
         this.age = age;
         this.job = job;
     }
+
+    public Person1[] BubbleSort(Person1[] person1s) {
+        //Person1 temp = new Person1(null, 0 , null);
+        Person1 temp;
+        for (int i = 0; i < person1s.length - 1; i++) {
+            for (int j = 1 + i; j < person1s.length; j++) {
+                if (person1s[j].age < person1s[i].age) {
+                    temp = person1s[i];
+                    person1s[i] = person1s[j];
+                    person1s[j] = temp;
+                }
+            }
+        }
+        return person1s;
+    }
+
+    @Override
+    public String toString() {
+        return "Person1{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", job='" + job + '\'' +
+                '}';
+    }
+
+    public void printArr(Person1[] person1s) {
+        for (int i = 0; i < person1s.length; i++) {
+            System.out.println(person1s[i].toString());
+        }
+    }
+
 }
