@@ -25,13 +25,13 @@ class Person1 {
 
     public Person1[] BubbleSort(Person1[] person1s) {
         //Person1 temp = new Person1(null, 0 , null);
-        Person1 temp;
+        Person1 temp = null;
         for (int i = 0; i < person1s.length - 1; i++) {
-            for (int j = 1 + i; j < person1s.length; j++) {
-                if (person1s[j].age < person1s[i].age) {
-                    temp = person1s[i];
-                    person1s[i] = person1s[j];
-                    person1s[j] = temp;
+            for (int j = 0; j < person1s.length - 1 - i; j++) {
+                if (person1s[j].age > person1s[j + 1].age) {
+                    temp = person1s[j];
+                    person1s[j] = person1s[j + 1];
+                    person1s[j + 1] = temp;
                 }
             }
         }
