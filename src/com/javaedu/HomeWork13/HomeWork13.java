@@ -24,6 +24,10 @@ public class HomeWork13 {
         for (int i = 0; i < persons.length; i++) {
             System.out.println(persons[i]);
         }
+        System.out.println("=======================");
+        for (int i = 0; i < persons.length; i++) {//遍历多态数组
+            homeWork13.test(persons[i]);
+        }
     }
 
     public void test(Person p) {
