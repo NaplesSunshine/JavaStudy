@@ -15,7 +15,7 @@ public class HouseView {
     //
     private boolean loop = true; //控制显示菜单
     private char key = ' '; //接收用户选择
-    private HouseRentService houseRentService = new HouseRentService(2);
+    private HouseRentService houseRentService = new HouseRentService(5);
 
     private void exit() {
         //这里我们使用Utility提供方法，完成确认
@@ -134,6 +134,12 @@ public class HouseView {
         String state = Utility.readString(3);
 
         House newHouse = new House(0, name, phone, address, rent, state);
+
+        if (houseRentService.add(newHouse)) {
+            System.out.println("=============添加房屋成功============");
+        } else {
+            System.out.println("=============添加房屋失败============");
+        }
     }
 
     public void mainMenu() {
@@ -146,28 +152,29 @@ public class HouseView {
             System.out.println("\t\t\t5 房 屋 列 表");
             System.out.println("\t\t\t6 退      出");
             System.out.print("请输入你的选择(1-6): ");
+
+            key = Utility.readChar();
+            switch (key) {
+                case '1':
+                    addHouse();
+                    break;
+                case '2':
+                    findHouse();
+                    break;
+                case '3':
+                    delHouse();
+                    break;
+                case '4':
+                    update();
+                    break;
+                case '5':
+                    listHouses();
+                    break;
+                case '6':
+                    exit();
+                    break;
+            }
         } while (loop);
-        key = Utility.readChar();
-        switch (key) {
-            case '1':
-                addHouse();
-                break;
-            case '2':
-                findHouse();
-                break;
-            case '3':
-                delHouse();
-                break;
-            case '4':
-                update();
-                break;
-            case '5':
-                listHouses();
-                break;
-            case '6':
-                exit();
-                break;
-        }
 
     }
 }

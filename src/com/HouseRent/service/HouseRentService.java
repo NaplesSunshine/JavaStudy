@@ -19,7 +19,6 @@ public class HouseRentService {
         //new houses
         houses = new House[size];//当创建HouseService对象，指定数组大小
         //为了配合测试列表信息，老韩这里初始化一个House对象
-        houses[0] = new House(1, "jack", "112", "海淀区", 2000, "未出租");
     }
 
     //findById方法,返回House对象或者null
