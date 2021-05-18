@@ -63,7 +63,6 @@ class Outer04 { //外部类
         //4. 同时也直接返回了 匿名内部类 Outer04$2的对象
         //5. 注意("jack") 参数列表会传递给 构造器
         Father father = new Father("jack"){
-
             @Override
             public void test() {
                 System.out.println("匿名内部类重写了test方法");
