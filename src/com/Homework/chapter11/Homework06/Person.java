@@ -13,12 +13,21 @@ public class Person {
         this.vehicles = vehicles;
     }
     public void passRiver() {
-
-        Boat boat = VehiclesFactory.getBoat();
-        boat.work();
+        if(!(vehicles instanceof Boat)) {
+            vehicles = VehiclesFactory.getBoat();
+        }
+        vehicles.work();
     }
     public void comm() {
-        Horse horse = VehiclesFactory.getHorse();
-        horse.work();
+        if(!(vehicles instanceof Horse)) {
+            vehicles = VehiclesFactory.getHorse();
+        }
+        vehicles.work();
+    }
+    public void passMountain() {
+        if(!(vehicles instanceof Airport)) {
+            vehicles = VehiclesFactory.getAirport();
+        }
+        vehicles.work();
     }
 }
